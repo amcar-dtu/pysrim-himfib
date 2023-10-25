@@ -30,10 +30,7 @@ RUN mkdir -p $SRIM_DIR && \
     cd "$SRIM_DIR/srim" && \
     echo "1" > $SRIM_DIR/srim/TRIMAUTO
 
-# COPY examples/input/TRIM.Ni.IN $SRIM_DIR/srim/TRIM.IN
-
-RUN apt update && \
-    apt install python3.7 python3-pip -y && \
+RUN apt install python3.7 python3-pip -y && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir https://github.com/$USERNAME/$PROJECT/archive/refs/tags/$VERSION.tar.gz && \
