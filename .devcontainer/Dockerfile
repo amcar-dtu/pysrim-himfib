@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386
 
 # zlib1g-dev and libjpeg-dev and are required for Pillow (matplotlib)
 RUN apt update && \
-    apt install wget unzip xvfb wine32 cabextract zlib1g-dev libjpeg-dev -y && \
+    apt install wget unzip xvfb wine32 cabextract zlib1g-dev libjpeg-dev python3.7 python3-pip -y && \
     rm -rf /var/lib/apt/lists/*
 
 # winetricks
@@ -30,8 +30,5 @@ RUN mkdir -p $SRIM_DIR && \
     unzip srim.2013.zip && \
     cd "$SRIM_DIR/srim" && \
     echo "1" > $SRIM_DIR/srim/TRIMAUTO
-
-RUN apt install python3.7 python3-pip -y && \
-    rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir https://github.com/$USERNAME/$PROJECT/archive/refs/tags/$VERSION.tar.gz

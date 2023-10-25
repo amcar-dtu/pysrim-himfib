@@ -26,7 +26,12 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt"
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
+
+	// Mount local folder to retrieve data
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/srim/output,target=/workspaces/pysrim-himfib/output,type=bind,consistency=cached"
+	]
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
