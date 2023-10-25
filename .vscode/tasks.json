@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "PYTHONWARNINGS": "ignore::yaml.YAMLLoadWarning"
+        }
+    },
+    "tasks": [{
+        "label": "Run SRIM simulation",
+        "command": "export PYTHONWARNINGS=ignore::yaml.YAMLLoadWarning && /usr/bin/xvfb-run -a python3 ${file}",
+        "type": "shell"
+    }]
+}

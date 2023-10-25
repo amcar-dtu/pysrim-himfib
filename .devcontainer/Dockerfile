@@ -36,4 +36,5 @@ RUN apt update && \
     apt install python3.7 python3-pip -y && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir https://github.com/$USERNAME/$PROJECT/archive/refs/tags/$VERSION.tar.gz
+RUN pip3 install --no-cache-dir https://github.com/$USERNAME/$PROJECT/archive/refs/tags/$VERSION.tar.gz && \
+    pip3 install pyyaml==5.1.2
