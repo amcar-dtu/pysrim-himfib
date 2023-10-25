@@ -37,8 +37,3 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir https://github.com/$USERNAME/$PROJECT/archive/refs/tags/$VERSION.tar.gz
-
-# RUN python -m pip install --user pipx && \
-#     python -m pipx ensurepath
-
-# RUN pipx install poetry
